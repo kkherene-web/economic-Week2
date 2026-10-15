@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Week 2 • Economic Agents and Economic Activities</title>
+<style>
+:root{
+  --ink:#19323d; --muted:#647780; --teal:#176b78; --teal2:#238b92;
+  --mint:#eaf7f5; --cream:#fff8e7; --line:#dce9e8; --white:#ffffff;
+  --shadow:0 10px 30px rgba(25,50,61,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f5f8f8;color:var(--ink);font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif;line-height:1.65}
+main{max-width:980px;margin:auto;padding:22px 18px 40px}
+header{position:relative;overflow:hidden;background:linear-gradient(135deg,#123f4a 0%,#176b78 55%,#2a8b8c 100%);color:#fff;border-radius:26px;padding:34px 30px 30px;margin-bottom:18px;box-shadow:0 16px 40px rgba(23,107,120,.20)}
+header:after{content:"";position:absolute;width:210px;height:210px;right:-70px;top:-80px;border-radius:50%;background:rgba(255,255,255,.08)}
+header h1{position:relative;z-index:1;margin:0 0 8px;font-size:30px;line-height:1.2;letter-spacing:-.4px}
+header p{position:relative;z-index:1;margin:7px 0;color:#e9f6f6;font-size:15px}
+.badge{position:relative;z-index:1;display:inline-flex;align-items:center;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);padding:7px 12px;border-radius:999px;margin-top:12px;font-size:13px}
+.topic-nav{display:flex;gap:8px;flex-wrap:wrap;background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:16px;padding:10px;margin:0 0 18px;position:sticky;top:8px;z-index:20;box-shadow:0 6px 20px rgba(25,50,61,.07)}
+.topic-nav a{text-decoration:none;color:var(--teal);background:#f0f7f6;border:1px solid #d7ebe8;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700}
+.topic-nav a:hover{background:var(--mint)}
+section{background:var(--white);border:1px solid #e2eceb;border-radius:22px;padding:25px;margin:18px 0;box-shadow:var(--shadow);scroll-margin-top:75px}
+section:before{content:"";display:block;width:48px;height:4px;border-radius:9px;background:linear-gradient(90deg,var(--teal),#72b8b2);margin-bottom:14px}
+.topic-label{display:inline-block;font-size:12px;color:var(--teal);background:var(--mint);border:1px solid #d6ebe8;padding:5px 10px;border-radius:999px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.7px;font-weight:800}
+h2{margin:0 0 15px;color:#173f49;font-size:25px;line-height:1.25}
+h3{display:flex;align-items:center;gap:8px;color:#176b78;margin:20px 0 9px;font-size:18px}
+h3:before{content:"";width:7px;height:7px;border-radius:50%;background:#55a7a0}
+.note{background:linear-gradient(90deg,#edf8f7,#f8fbfb);border:1px solid #d9ecea;border-left:5px solid #2a8b8c;padding:12px 15px;border-radius:12px;margin:13px 0 18px;color:#405a62;font-size:14px}
+.line{display:flex;align-items:center;gap:10px;margin:8px 0;padding:8px 10px;border-radius:10px;transition:.15s ease}
+.line:hover{background:#f7faf9}
+.line>span{flex:1}
+.visual{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0 22px}
+.box{background:linear-gradient(180deg,#fbfdfd,#f1f8f7);border:1px solid #d6e7e5;border-radius:16px;padding:13px 17px;text-align:center;min-width:112px;box-shadow:0 4px 12px rgba(25,50,61,.05);font-weight:600}
+.arrow{font-size:23px;color:#2a8b8c;font-weight:700}
+.vocab{border:1px solid #deebe9;background:#fcfefe;border-radius:15px;padding:15px 16px;margin:10px 0}
+.word{font-weight:800;color:#176b78;font-size:20px;margin-bottom:6px}
+.ar{direction:rtl;text-align:right;color:#73848a;font-size:13px;margin:5px 0 8px}
+.definition{background:linear-gradient(135deg,#eef8f7,#f8fbfa);border:1px solid #cfe6e3;border-radius:15px;padding:17px;margin:14px 0;font-size:18px;color:#174b55;font-weight:700}
+.definition .ar{font-weight:normal}
+.key{background:linear-gradient(135deg,#fff9e7,#fffdf7);border:1px solid #f0dfad;border-left:5px solid #d7ae3c;padding:13px 15px;border-radius:12px;margin-top:16px}
+.key b{color:#8b6a12}
+.footer{text-align:center;color:#72838a;font-size:12px;padding:18px 8px 4px}
+.audio{width:38px;height:38px;border:1px solid #cfe6e3;border-radius:50%;background:#e9f6f4;color:#176b78;cursor:pointer;font-size:17px;flex:none;box-shadow:0 2px 5px rgba(23,107,120,.08);transition:.15s ease}
+.audio:hover{transform:scale(1.08);background:#dff1ef}
+.audio:active{transform:scale(.96)}
+@media(max-width:650px){
+  main{padding:12px}
+  header{padding:26px 20px;border-radius:20px}
+  header h1{font-size:25px}
+  section{padding:18px;border-radius:18px}
+  h2{font-size:22px}
+  .topic-nav{position:static}
+  .topic-nav a{font-size:12px;padding:6px 9px}
+}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+<h1>Week 2: Economic Agents and Economic Activities</h1>
+<p>Presentation Stage • Topics 1–5</p>
+<span class="badge">⏱ About 12–15 minutes</span>
+</header>
+
+<nav class="topic-nav" aria-label="Week 2 topics">
+<a href="#topic1">1 · Economic Agents</a>
+<a href="#topic2">2 · Households</a>
+<a href="#topic3">3 · Firms</a>
+<a href="#topic4">4 · Government &amp; Banks</a>
+<a href="#topic5">5 · Circular Flow</a>
+</nav>
+
+<section id="topic1">
+<div class="topic-label">Topic 1 • What Are Economic Agents?</div>
+<h2>The Actors of the Economy</h2>
+<div class="note">An economic agent is a person or organization that makes economic decisions. Let us discover the main agents.</div>
+
+<div class="visual">
+<div class="box">🏠<br>Households</div><div class="arrow">↔</div>
+<div class="box">🏭<br>Firms</div><div class="arrow">↔</div>
+<div class="box">🏛️<br>Government</div>
+</div>
+
+<div class="line"><span>An economic agent is a person or organization that makes economic decisions.</span><button class="audio" onclick="speak('An economic agent is a person or organization that makes economic decisions.')" title="Listen">🔊</button></div>
+<div class="line"><span>The main economic agents are households, firms, and the government.[cite: 7]</span><button class="audio" onclick="speak('The main economic agents are households, firms, and the government.')" title="Listen">🔊</button></div>
+<div class="line"><span>Households, firms, and the government interact in the economy.[cite: 7]</span><button class="audio" onclick="speak('Households, firms, and the government interact in the economy.')" title="Listen">🔊</button></div>
+<div class="line"><span>Banks and financial institutions also play an important role.[cite: 7]</span><button class="audio" onclick="speak('Banks and financial institutions also play an important role.')" title="Listen">🔊</button></div>
+<div class="line"><span>These agents work together to produce and consume goods and services.[cite: 7]</span><button class="audio" onclick="speak('These agents work together to produce and consume goods and services.')" title="Listen">🔊</button></div>
+
+<div class="key"><b>Key idea</b>
+<div class="line"><span>Economic agents are the actors that make decisions and perform activities in the economy.</span><button class="audio" onclick="speak('Economic agents are the actors that make decisions and perform activities in the economy.')" title="Listen">🔊</button></div></div>
+
+<div class="vocab">
+<div class="word">Household <button class="audio" onclick="speak('Household')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> a group of people who live together and make economic decisions <button class="audio" onclick="speak('a group of people who live together and make economic decisions')" title="Listen">🔊</button></div>
+<div><b>Example:</b> A household buys food and pays for electricity. <button class="audio" onclick="speak('A household buys food and pays for electricity.')" title="Listen">🔊</button></div>
+<div class="ar">الأسرة / المنزل</div>
+</div>
+
+<div class="vocab">
+<div class="word">Firm <button class="audio" onclick="speak('Firm')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> a business organization that produces goods or provides services <button class="audio" onclick="speak('a business organization that produces goods or provides services')" title="Listen">🔊</button></div>
+<div><b>Example:</b> A firm produces cars and sells them to consumers. <button class="audio" onclick="speak('A firm produces cars and sells them to consumers.')" title="Listen">🔊</button></div>
+<div class="ar">الشركة / المؤسسة</div>
+</div>
+
+<div class="vocab">
+<div class="word">Institution <button class="audio" onclick="speak('Institution')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> an organization or established system in society <button class="audio" onclick="speak('an organization or established system in society')" title="Listen">🔊</button></div>
+<div><b>Example:</b> Banks and universities are important institutions. <button class="audio" onclick="speak('Banks and universities are important institutions.')" title="Listen">🔊</button></div>
+<div class="ar">مؤسسة</div>
+</div>
+
+<div class="definition">
+Economic agents are the individuals and organizations that make decisions about production, consumption, and exchange in the economy.
+<button class="audio" onclick="speak('Economic agents are the individuals and organizations that make decisions about production, consumption, and exchange in the economy.')" title="Listen">🔊</button>
+<div class="ar">الوكلاء الاقتصاديون هم الأفراد والمنظمات الذين يتخذون قرارات الإنتاج والاستهلاك والتبادل في الاقتصاد.</div>
+</div>
+</section>
+
+<section id="topic2">
+<div class="topic-label">Topic 2 • Households</div>
+<h2>The Role of Households in the Economy</h2>
+<div class="note">Households are the most important consumers. They provide labour and receive income.</div>
+
+<div class="visual">
+<div class="box">👨‍👩‍👧<br>Household</div><div class="arrow">→</div>
+<div class="box">💼<br>Labour</div><div class="arrow">→</div>
+<div class="box">💰<br>Income</div><div class="arrow">→</div>
+<div class="box">🛒<br>Consumption</div>
+</div>
+
+<div class="line"><span>A household is a group of people who live together.</span><button class="audio" onclick="speak('A household is a group of people who live together.')" title="Listen">🔊</button></div>
+<div class="line"><span>Households are the most important consumers in the economy.</span><button class="audio" onclick="speak('Households are the most important consumers in the economy.')" title="Listen">🔊</button></div>
+<div class="line"><span>Households provide labour to firms and receive income.</span><button class="audio" onclick="speak('Households provide labour to firms and receive income.')" title="Listen">🔊</button></div>
+<div class="line"><span>They use their income to buy goods and services.</span><button class="audio" onclick="speak('They use their income to buy goods and services.')" title="Listen">🔊</button></div>
+<div class="line"><span>Consumption is the use of goods and services by households.</span><button class="audio" onclick="speak('Consumption is the use of goods and services by households.')" title="Listen">🔊</button></div>
+<div class="line"><span>Households also save part of their income for the future.</span><button class="audio" onclick="speak('Households also save part of their income for the future.')" title="Listen">🔊</button></div>
+
+<div class="key"><b>Key idea</b>
+<div class="line"><span>Households provide labour, earn income, consume goods and services, and save.</span><button class="audio" onclick="speak('Households provide labour, earn income, consume goods and services, and save.')" title="Listen">🔊</button></div></div>
+
+<div class="vocab">
+<div class="word">Income <button class="audio" onclick="speak('Income')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> money that people receive from work or investments <button class="audio" onclick="speak('money that people receive from work or investments')" title="Listen">🔊</button></div>
+<div><b>Example:</b> Workers receive income every month. <button class="audio" onclick="speak('Workers receive income every month.')" title="Listen">🔊</button></div>
+<div class="ar">الدخل</div>
+</div>
+
+<div class="vocab">
+<div class="word">Consumption <button class="audio" onclick="speak('Consumption')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> the use of goods and services by consumers <button class="audio" onclick="speak('the use of goods and services by consumers')" title="Listen">🔊</button></div>
+<div><b>Example:</b> Buying food and clothes is an example of consumption. <button class="audio" onclick="speak('Buying food and clothes is an example of consumption.')" title="Listen">🔊</button></div>
+<div class="ar">الاستهلاك</div>
+</div>
+
+<div class="vocab">
+<div class="word">Saving <button class="audio" onclick="speak('Saving')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> money that is kept for future use <button class="audio" onclick="speak('money that is kept for future use')" title="Listen">🔊</button></div>
+<div><b>Example:</b> A family puts money in the bank for saving. <button class="audio" onclick="speak('A family puts money in the bank for saving.')" title="Listen">🔊</button></div>
+<div class="ar">الادخار</div>
+</div>
+</section>
+
+<section id="topic3">
+<div class="topic-label">Topic 3 • Firms</div>
+<h2>Firms: Production and Employment</h2>
+<div class="note">Firms produce goods and services. They hire workers and invest in capital.</div>
+
+<div class="visual">
+<div class="box">🏭<br>Firm</div><div class="arrow">→</div>
+<div class="box">👷<br>Workers</div><div class="arrow">→</div>
+<div class="box">📦<br>Production</div><div class="arrow">→</div>
+<div class="box">💰<br>Profit</div>
+</div>
+
+<div class="line"><span>A firm is a business that produces goods or provides services.</span><button class="audio" onclick="speak('A firm is a business that produces goods or provides services.')" title="Listen">🔊</button></div>
+<div class="line"><span>Firms hire workers and use capital to produce goods.</span><button class="audio" onclick="speak('Firms hire workers and use capital to produce goods.')" title="Listen">🔊</button></div>
+<div class="line"><span>Production is the process of making goods or providing services.</span><button class="audio" onclick="speak('Production is the process of making goods or providing services.')" title="Listen">🔊</button></div>
+<div class="line"><span>Firms sell their products to households and other firms.</span><button class="audio" onclick="speak('Firms sell their products to households and other firms.')" title="Listen">🔊</button></div>
+<div class="line"><span>Employment is the state of having paid work.</span><button class="audio" onclick="speak('Employment is the state of having paid work.')" title="Listen">🔊</button></div>
+<div class="line"><span>Firms invest in new machines and technology to grow.</span><button class="audio" onclick="speak('Firms invest in new machines and technology to grow.')" title="Listen">🔊</button></div>
+<div class="line"><span>Investment is the use of money to buy capital goods.</span><button class="audio" onclick="speak('Investment is the use of money to buy capital goods.')" title="Listen">🔊</button></div>
+
+<div class="key"><b>Key idea</b>
+<div class="line"><span>Firms produce goods and services, employ workers, and invest in capital to grow.</span><button class="audio" onclick="speak('Firms produce goods and services, employ workers, and invest in capital to grow.')" title="Listen">🔊</button></div></div>
+
+<div class="vocab">
+<div class="word">Production <button class="audio" onclick="speak('Production')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> the process of making goods or services <button class="audio" onclick="speak('the process of making goods or services')" title="Listen">🔊</button></div>
+<div><b>Example:</b> The production of cars takes place in a factory. <button class="audio" onclick="speak('The production of cars takes place in a factory.')" title="Listen">🔊</button></div>
+<div class="ar">الإنتاج</div>
+</div>
+
+<div class="vocab">
+<div class="word">Employment <button class="audio" onclick="speak('Employment')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> the state of having paid work <button class="audio" onclick="speak('the state of having paid work')" title="Listen">🔊</button></div>
+<div><b>Example:</b> Employment in the company increased this year. <button class="audio" onclick="speak('Employment in the company increased this year.')" title="Listen">🔊</button></div>
+<div class="ar">التوظيف / العمالة</div>
+</div>
+
+<div class="vocab">
+<div class="word">Investment <button class="audio" onclick="speak('Investment')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> the use of money to buy capital goods <button class="audio" onclick="speak('the use of money to buy capital goods')" title="Listen">🔊</button></div>
+<div><b>Example:</b> The firm made a large investment in new machines. <button class="audio" onclick="speak('The firm made a large investment in new machines.')" title="Listen">🔊</button></div>
+<div class="ar">الاستثمار</div>
+</div>
+</section>
+
+<section id="topic4">
+<div class="topic-label">Topic 4 • Government and Banks</div>
+<h2>Public Services and Financial Institutions</h2>
+<div class="note">The government provides services and collects taxes. Banks manage money and provide loans.</div>
+
+<div class="visual">
+<div class="box">🏛️<br>Government</div><div class="arrow">↔</div>
+<div class="box">🏦<br>Banks</div><div class="arrow">↔</div>
+<div class="box">💵<br>Money</div>
+</div>
+
+<div class="line"><span>The government provides public services to citizens.</span><button class="audio" onclick="speak('The government provides public services to citizens.')" title="Listen">🔊</button></div>
+<div class="line"><span>The government collects taxes from households and firms.</span><button class="audio" onclick="speak('The government collects taxes from households and firms.')" title="Listen">🔊</button></div>
+<div class="line"><span>Government expenditure is the money spent by the government.</span><button class="audio" onclick="speak('Government expenditure is the money spent by the government.')" title="Listen">🔊</button></div>
+<div class="line"><span>Banks are financial institutions that hold money for people.</span><button class="audio" onclick="speak('Banks are financial institutions that hold money for people.')" title="Listen">🔊</button></div>
+<div class="line"><span>Banks provide loans to households and firms.</span><button class="audio" onclick="speak('Banks provide loans to households and firms.')" title="Listen">🔊</button></div>
+<div class="line"><span>Banks help people save and invest their money.</span><button class="audio" onclick="speak('Banks help people save and invest their money.')" title="Listen">🔊</button></div>
+<div class="line"><span>Financial institutions are important for economic activity.</span><button class="audio" onclick="speak('Financial institutions are important for economic activity.')" title="Listen">🔊</button></div>
+
+<div class="key"><b>Key idea</b>
+<div class="line"><span>The government provides services and collects taxes. Banks manage money and provide loans.</span><button class="audio" onclick="speak('The government provides services and collects taxes. Banks manage money and provide loans.')" title="Listen">🔊</button></div></div>
+
+<div class="vocab">
+<div class="word">Government <button class="audio" onclick="speak('Government')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> the institution that manages a country and provides public services <button class="audio" onclick="speak('the institution that manages a country and provides public services')" title="Listen">🔊</button></div>
+<div><b>Example:</b> The government builds roads, schools, and hospitals. <button class="audio" onclick="speak('The government builds roads, schools, and hospitals.')" title="Listen">🔊</button></div>
+<div class="ar">الحكومة</div>
+</div>
+
+<div class="vocab">
+<div class="word">Bank <button class="audio" onclick="speak('Bank')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> a financial institution that holds and manages money <button class="audio" onclick="speak('a financial institution that holds and manages money')" title="Listen">🔊</button></div>
+<div><b>Example:</b> She keeps her savings in a bank. <button class="audio" onclick="speak('She keeps her savings in a bank.')" title="Listen">🔊</button></div>
+<div class="ar">البنك</div>
+</div>
+
+<div class="vocab">
+<div class="word">Expenditure <button class="audio" onclick="speak('Expenditure')" title="Listen">🔊</button></div>
+<div><b>Simple meaning:</b> the money that is spent <button class="audio" onclick="speak('the money that is spent')" title="Listen">🔊</button></div>
+<div><b>Example:</b> Public expenditure on education increased this year. <button class="audio" onclick="speak('Public expenditure on education increased this year.')" title="Listen">🔊</button></div>
+<div class="ar">الإنفاق</div>
+</div>
+</section>
+
+<section id="topic5">
+<div class="topic-label">Topic 5 • The Circular Flow of Income</div>
+<h2>How Money Moves in the Economy</h2>
+<div class="note">The circular flow shows the relationship between households, firms, government, and banks.</div>
+
+<div class="visual">
+<div class="box">🏠<br>Households</div><div class="arrow">↔</div>
+<div class="box">🏭<br>Firms</div><div class="arrow">↔</div>
+<div class="box">🏛️<br>Government</div><div class="arrow">↔</div>
+<div class="box">🏦<br>Banks</div>
+</div>
+
+<div class="line"><span>Economic activities include production, consumption, and exchange.</span><button class="audio" onclick="speak('Economic activities include production, consumption, and exchange.')" title="Listen">🔊</button></div>
+<div class="line"><span>The circular flow of income shows how money moves in the economy.</span><button class="audio" onclick="speak('The circular flow of income shows how money moves in the economy.')" title="Listen">🔊</button></div>
+<div class="line"><span>Households provide labour and receive income from firms.</span><button class="audio" onclick="speak('Households provide labour and receive income from firms.')" title="Listen">🔊</button></div>
+<div class="line"><span>Firms produce goods and pay wages to households.</span><button class="audio" onclick="speak('Firms produce goods and pay wages to households.')" title="Listen">🔊</button></div>
+<div class="line"><span>The government collects taxes and provides services.</span><button class="audio" onclick="speak('The government collects taxes and provides services.')" title="Listen">🔊</button></div>
+<div class="line"><span>Banks help money flow between households and firms.</span><button class="audio" onclick="speak('Banks help money flow between households and firms.')" title="Listen">🔊</button></div>
+<div class="line"><span>The circular flow shows the relationship between economic agents.</span><button class="audio" onclick="speak('The circular flow shows the relationship between economic agents.')" title="Listen">🔊</button></div>
+
+<div class="key"><b>Key idea</b>
+<div class="line"><span>The circular flow of income shows how households, firms, government, and banks interact in the economy.</span><button class="audio" onclick="speak('The circular flow of income shows how households, firms, government, and banks interact in the economy.')" title="Listen">🔊</button></div></div>
+</section>
+
+<section>
+<div class="topic-label">End of the presentation</div>
+<h2>What Have We Seen?</h2>
+<div class="line"><span>Economic agents are households, firms, government, and banks.</span><button class="audio" onclick="speak('Economic agents are households, firms, government, and banks.')" title="Listen">🔊</button></div>
+<div class="line"><span>Households provide labour, earn income, and consume goods.</span><button class="audio" onclick="speak('Households provide labour, earn income, and consume goods.')" title="Listen">🔊</button></div>
+<div class="line"><span>Firms produce goods and services and employ workers.</span><button class="audio" onclick="speak('Firms produce goods and services and employ workers.')" title="Listen">🔊</button></div>
+<div class="line"><span>The government provides services and collects taxes.</span><button class="audio" onclick="speak('The government provides services and collects taxes.')" title="Listen">🔊</button></div>
+<div class="line"><span>Banks manage money and provide loans.</span><button class="audio" onclick="speak('Banks manage money and provide loans.')" title="Listen">🔊</button></div>
+<div class="line"><span>The circular flow of income shows how money moves in the economy.</span><button class="audio" onclick="speak('The circular flow of income shows how money moves in the economy.')" title="Listen">🔊</button></div>
+<div class="note"><b>Next stage:</b> Practice activities can now follow this presentation.</div>
+</section>
+
+<div class="footer">General Economic English • Week 2 • Presentation Stage</div>
+</main>
+
+<script>
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.9;
+    window.speechSynthesis.speak(utterance);
+  } else {
+    alert('Sorry, your browser does not support text-to-speech audio.');
+  }
+}
+</script>
+</body>
+</html>
